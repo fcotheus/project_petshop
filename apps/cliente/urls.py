@@ -1,7 +1,8 @@
-# from django.urls import path
+from django.urls import path
 
-# from . import views
+from . import views
 
-# URLPatterns = [
-#     path('', views.cliente, name='cliente')
-# ]
+URLPatterns = [
+    path('cadastro', views.cadastro, name='cadastro')
+    
+]

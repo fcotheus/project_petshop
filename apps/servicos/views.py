@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def cadastro(request):
-    return render(request, 'cliente/cadastro_pessoa.html')
+  return  render(request,'servicos/cadastro_servicos.html')

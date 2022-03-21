@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #application the 3rd
+    'widget_tweaks',
+    'tempus_dominus',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +135,20 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
+    messages.INFO:'info',
+    messages.WARNING:'warning',
+}
+
+# Media
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# MEDIA_URL = '/media/'
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+  

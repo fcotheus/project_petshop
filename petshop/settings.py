@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8wr)yj(pjmk8ku(7=wfucnolzr7+n_go-mf)w0vw(&mu066rrd'
+SECRET_KEY = 'django-insecure-zv@22g!4^-78bx+#a=l-rh20h(i3%%qi*h1l9(*wjrjggsk4xp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #application the 3rd
-    'widget_tweaks',
-    'tempus_dominus',
+     #application the 3rd
+    # 'widget_tweaks',
+    # 'tempus_dominus',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +86,15 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+    #    "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "postgres",
+    #     "USER": "postgres",
+    #     "PASSWORD": "postgres",
+    #     "HOST": "db",
+    #     "PORT": 5432,
+    # }
 }
 
 
@@ -122,33 +131,29 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
+#Arquivos Estaticos
 STATIC_ROOT = os.path.join(BASE_DIR,'../static')
+
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, './static')
 ]
 
+#Pasta Apps
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
-# Messages
+#Messages
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
-    messages.ERROR: 'danger',
+    messages.ERROR: 'error',
     messages.SUCCESS: 'success',
     messages.INFO:'info',
     messages.WARNING:'warning',
 }
 
-# Media
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-# MEDIA_URL = '/media/'
-
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-  

@@ -1,43 +1,42 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
 
-
-    <div class="right-login">
-        <div class="card-login">
-            <h1>Serviço</h1>
-            <div class="textfield">
-                <label for="Cliente">Cliente</label>
-                <input type="text" name="usuario" id="usuario" placeholder="Usuário">
-            </div>
-            <div class="textfield">
-                <label for="Animal">Animal</label>
-                <input type="password" name="senha" id="senha" placeholder="Senha">
-            </div>
-            <label for="service">Tipo de Serviço: </label>
-            <select class="servico">
-                
-                <option value="Banho"> Banho </option>
-                <option value="Tosa"> Tosa </option>
-                <option value="Vacina"> Vacina </option>
-                
-             </select>
-           
-             <label for="service">Tipo de Serviço: </label>
-             <select class="pagamento">
-                
-                <option value="Dinheiro"> Dinheiro </option>
-                <option value="Cartao"> Cartão de Credito </option>
-                <option value="Pix"> Pix </option>
-                <option value="Transferencia"> Transferencia Bancaria </option>
-                
-             </select>
-             <br>
-            <button class="btn-limpar">Limpar</button>
-            <button class="btn-salvar">Salvar</button>
+    <section>
+        <div class="main-service">
+    
+            <div class="service">
+                <div class="card-servico">
+                    <h1>Servico</h1>
+                    <div class="textfield">
+                        <label for="Cliente">Cliente</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+                    </div>
+                    <div class="textfield">
+                        <label for="Animal">Animal</label>
+                        <input type="password" name="senha" id="senha" placeholder="Senha">
+                    </div>
+                    <label for="typeservice">Tipo de Serviço: </label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Qual Serviço Gostaria de Contratar? </option>
+                        <option value="1">Banho</option>
+                        <option value="2">Tosa</option>
+                        <option value="3">Vacina</option>
+                      </select>
+                   
+                     <label for="service">Tipo de Serviço: </label>
+                     <select class="form-select" aria-label="Default select example">
+                        <option selected>Como deseja pagar?</option>
+                        <option value="1">Crtão de Credito</option>
+                        <option value="2">Dinheiro</option>
+                        <option value="3">Trasnferencia Bancaria</option>
+                        <option value="4">Pix</option>
+                      </select>
+                     <br>
+                    <button class="btn-limpar">Limpar</button>
+                    <button class="btn-salvar">Salvar</button>
+                </div>
+            
         </div>
-
-
-
-
-{% endblock %}
+        
+    
+        </div>
+    </section>
+    

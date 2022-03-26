@@ -153,7 +153,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border-radius: 10px;
     padding: 15px;
     background: #514869;
-    color: #f0ffffde;
+    color: #dd1043de;
     font-size: 12pt;
     box-shadow: 0px 10px 40px #00000056;
     outline: none;
@@ -200,3 +200,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     align-items: center;
 
 }
+
+/* Css Tela ade Serviço */

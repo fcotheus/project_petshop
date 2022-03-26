@@ -3,4 +3,41 @@
 {% block content %}
 
 
+    <div class="right-login">
+        <div class="card-login">
+            <h1>Serviço</h1>
+            <div class="textfield">
+                <label for="Cliente">Cliente</label>
+                <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+            </div>
+            <div class="textfield">
+                <label for="Animal">Animal</label>
+                <input type="password" name="senha" id="senha" placeholder="Senha">
+            </div>
+            <label for="service">Tipo de Serviço: </label>
+            <select class="servico">
+                
+                <option value="Banho"> Banho </option>
+                <option value="Tosa"> Tosa </option>
+                <option value="Vacina"> Vacina </option>
+                
+             </select>
+           
+             <label for="service">Tipo de Serviço: </label>
+             <select class="pagamento">
+                
+                <option value="Dinheiro"> Dinheiro </option>
+                <option value="Cartao"> Cartão de Credito </option>
+                <option value="Pix"> Pix </option>
+                <option value="Transferencia"> Transferencia Bancaria </option>
+                
+             </select>
+             <br>
+            <button class="btn-limpar">Limpar</button>
+            <button class="btn-salvar">Salvar</button>
+        </div>
+
+
+
+
 {% endblock %}

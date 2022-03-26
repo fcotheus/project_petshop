@@ -1,17 +1,19 @@
-
-    <section>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section #servico class="container servico_form">
         <div class="main-service">
-    
+
             <div class="service">
                 <div class="card-servico">
                     <h1>Servico</h1>
-                    <div class="textfield">
+                    <div class="textfield2">
                         <label for="Cliente">Cliente</label>
-                        <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+                        <input type="text" name="usuario" id="usuario" >
                     </div>
-                    <div class="textfield">
+                    <div class="textfield2">
                         <label for="Animal">Animal</label>
-                        <input type="password" name="senha" id="senha" placeholder="Senha">
+                        <input type="password" name="senha" id="senha" >
                     </div>
                     <label for="typeservice">Tipo de Serviço: </label>
                     <select class="form-select" aria-label="Default select example">
@@ -35,8 +37,9 @@
                 </div>
             
         </div>
-        
-    
         </div>
     </section>
     
+</section>
+
+{% endblock %}

@@ -2,42 +2,52 @@
 {% load static %}
 {% block content %}
 <section #servico class="container servico_form">
-        <div class="main-service">
-
-            <div class="service">
-                <div class="card-servico">
-                    <h1>Servico</h1>
-                    <div class="textfield2">
-                        <label for="Cliente">Cliente</label>
-                        <input type="text" name="usuario" id="usuario" >
-                    </div>
-                    <div class="textfield2">
-                        <label for="Animal">Animal</label>
-                        <input type="password" name="senha" id="senha" >
-                    </div>
-                    <label for="typeservice">Tipo de Serviço: </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Qual Serviço Gostaria de Contratar? </option>
-                        <option value="1">Banho</option>
-                        <option value="2">Tosa</option>
-                        <option value="3">Vacina</option>
-                      </select>
-                   
-                     <label for="service">Forma de Pagamento: </label>
-                     <select class="form-select" aria-label="Default select example">
-                        <option selected>Como deseja pagar?</option>
-                        <option value="1">Crtão de Credito</option>
-                        <option value="2">Dinheiro</option>
-                        <option value="3">Trasnferencia Bancaria</option>
-                        <option value="4">Pix</option>
-                      </select>
-                     <br>
-                    <button class="btn-limpar">Limpar</button>
-                    <button class="btn-salvar">Salvar</button>
-                </div>
+    <div class="tela">
+        <form method="post" action="">
+            <table id="tab"cellspacing="2" cellpadding="2">
             
-        </div>
-        </div>
+                <th colspan="3"><h3>Serviços</h3></th>	
+                <tr>
+                    <td>Cliente</td>
+                    <td><input type="text" name="Cliente" size="60"></td>
+                </tr>
+                <tr>
+                    <td>Animal</td>
+                    <td><input type="text" name="animal" size="60"></td>
+                </tr>
+                <tr>
+                    <td>Tipos de Serviço</td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Qual Serviço Gostaria de Contratar? </option>
+                            <option value="1">Banho</option>
+                            <option value="2">Tosa</option>
+                            <option value="3">Vacina</option>
+                          </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Forma de Pagamento</td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Como deseja pagar?</option>
+                            <option value="1">Cartão de Credito</option>
+                            <option value="2">Dinheiro</option>
+                            <option value="3">Trasnferencia Bancaria</option>
+                            <option value="4">Pix</option>
+                          </select>
+                </tr>		  
+                 <tr>
+                    
+                    <td colspan="2" align="center">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar</button>
+                    </td>
+                </tr>
+            
+            </table>	
+        </form>
+    </div>
     </section>
     
 </section>

@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      #application the 3rd
-    # 'widget_tweaks',
-    # 'tempus_dominus',
+    'widget_tweaks',
+    'tempus_dominus',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [

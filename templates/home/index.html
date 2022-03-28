@@ -2,5 +2,98 @@
 {% load static %}
 {% block content %}
 
+{% include 'partials/_navbar.html' %}
+<section id="topo">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
 
+
+<section id="frases">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 mt-3 mb-1">
+                <h1>Sonhe e realize. Deseje e conquiste.</h1>
+            </div>
+            <div class="col-lg-12 mb-3">
+                <p class="frase1">Sua independência financeira fica mais fácil com Diamantes Lingerie.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="menuCentral">
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 item">
+                <div class="card-body item_body">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 item">
+                <div class="card-body item_body">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 item">
+                <div class="card-body item_body">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 item">
+                <div class="card-body item_body">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last hupdated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'partials/_footer.html' %}
 {% endblock %}

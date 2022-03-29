@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #application the 3rd
     'widget_tweaks',
     'tempus_dominus',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [

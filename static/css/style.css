@@ -258,11 +258,7 @@ nav.navbar-transparente {
     background-color: #333;
     color: #ECEEF0;
     border-top: 3px solid#ECEEF0;
-    clear: both;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+
 }
 
 .rodape-wrapper {

@@ -1,50 +1,60 @@
 {% load static %}
 
-<div class="sidebar">
-    <div class="logo-details">
-        <div class="logo_name">CodingLab</div>
-        <!-- <i class='bx bx-menu' id="btn"></i> -->
-        <i class="fa-solid fa-bars" id="btn"></i>
+<section class="sidebar">
+    <div class="logo_content">
+        <div class="logo">
+            <i class="icon_logo fa-brands fa-centercode"></i>
+            <div class="logo_name">MerfiuLab</div>
+        </div>
+        <i class="fa-solid fa-bars" id="menu_btn"></i>
     </div>
-    <ul class="nav-list">
+    <ul class="nav_list">
         <li>
             <a href="#">
-                <i class='fa-solid fa-home'></i>
+                <i class="icon_logo fa-solid fa-gauge"></i>
                 <span class="links_name">Dashboard</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip_menu">Dashboard</span>
         </li>
-
-        <li class="profile">
-            <div class="profile-details">
-                <!--<img src="profile.jpg" alt="profileImg">-->
+        <li>
+            <a href="#">
+                <i class="icon_logo fa-solid fa-people-group"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip_menu">Dashboard</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="icon_logo fa-solid fa-paw"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip_menu">Dashboard</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class="icon_logo fa-solid fa-user"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip_menu">Dashboard</span>
+        </li>  
+    </ul>
+    <div class="profile_content">
+        <div class="profile">
+            <div class="profile_details">
+                <img src="{%static 'img/logo.svg' %}" alt="">
                 <div class="name_job">
-                    <div class="name">Prem Shahi</div>
-                    <div class="job">Web designer</div>
+                    <div class="name">Merfiu</div>
+                    <div class="job">web POICO</div>
                 </div>
             </div>
-            <i class='bx bx-log-out' id="log_out"></i>
-        </li>
-    </ul>
-</div>
-<section class="home-section">
-    <div class="text">Dashboard</div>
+            <div class="item_log_out">
+                <i class="fa-solid fa-right-from-bracket" id="log_out"></i>
+            </div>
+        </div>
+    </div>
 </section>
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let closeBtn = document.querySelector("#btn");
 
-    closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-        menuBtnChange();//calling the function(optional)
-    });
+   <div class="home_content">
+        <div class="text">home content</div>
+    </div>
 
-    // following are the code to change sidebar button(optional)
-    function menuBtnChange() {
-        if (sidebar.classList.contains("open")) {
-            closeBtn.classList.replace("fa-bars", "fa-bars-alt-right");//replacing the iocns class
-        } else {
-            closeBtn.classList.replace("fa-bars-alt-right", "fa-bars");//replacing the iocns class
-        }
-    }
-</script>

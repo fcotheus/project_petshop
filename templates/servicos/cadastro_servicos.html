@@ -2,9 +2,67 @@
 {% load static %}
 {% block content %}
 
-<section>
-    <div class="bt">
-        <h1>Cadastro de Serviços</h1>
+<section #pets class="card_pet container">
+    <div class="card">
+        <div class="card-header card__titulo">
+            <h5>Serviços e Produtos</h5>
+        </div>
+        <div class="card-body">
+            <!-- <h5 class="card-title">Cadastro de Pet</h5> -->
+            <form action="" class="row g-3" method="post">
+                {% csrf_token %}
+                <div class="col-md-4">
+                    <label for="inputNomeCliente" class="form-label">Nome do Cliente</label>
+                    <input type="text" class="form-control" id="inputNomeCliente">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="inputNomeAnimal" class="form-label">Nome do Animal</label>
+                    <input type="text" class="form-control" id="inputNomeCliente">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="inputServico" class="form-label">Serviço</label>
+                    <select name="form-control" class="form-select" id="inputServico">
+                        <option value="B">Banho e Tosa</option>
+                        <option value="V">Veterinaria</option>
+                        <option value="H">Hidratação</option>
+                        <option value="-">------</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="inputDataServico" class="form-label">Início do Serviço</label>
+                    <input type="date" class="form-control" id="inputDataServico">
+                </div>
+                
+                <div class="col-md-4">
+                    <label for="inputHoraServiço" class="form-label">Hora do Serviço</label>
+                    <input type="date" class="form-control" id="inputHoraServiço">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="inputPagamento" class="form-label">Forma de Pagamnto</label>
+                    <select name="form-control" class="form-select" id="inputPagamento">
+                        <option value="Di">Dinheiro</option>
+                        <option value="Cd">Cartão de débito</option>
+                        <option value="Cc">Cartão de crédito</option>
+                        <option value="Bb">Boleto bancário</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12 d-flex justify-content-between mt-5">
+                    <div>
+                        <label class="form-label" for="date_cadastro">Data do Agendamento:</label>
+                        <p>28/03/2022</p>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>
+                            Agendar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 

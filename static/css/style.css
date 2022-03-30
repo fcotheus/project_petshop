@@ -535,3 +535,26 @@ nav.navbar-transparente {
     display: none;
   }
 }
+
+/*************************************************************************************/
+/*************************************FORM********************************************/
+/*************************************************************************************/
+
+.card_pet{
+  border:1px solid #e7ecf1;
+  padding: 2%;
+  margin-top: 5em;
+  
+  }
+  .card__titulo{
+      color: #32c5d2;
+      display: flex; 
+      text-transform: uppercase; 
+  }
+  .card__titulo h2{
+      margin-bottom: 0;
+      padding: 0.2em 0;
+      font-size: 1.6em;
+      font-weight: 400;
+      align-items: center;
+  }

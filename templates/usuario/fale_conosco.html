@@ -1,48 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load widget_tweaks %}
 {% include 'partials/_navbar.html' %}
 
-<section #formClientes class="mt-5 container">
+<section #formClientes class="pet-form-container">
     <div class="card">
-        <div class="card-header card__titulo">
+        <div class="card-header card__titulo text-center">
             <h2>Fale conosco</h2>
-            <div class="card ">
+            <h5>Realize o pré-cadastro e logo entraremos em contato com você.</h5>
+        </div>
+        <div class="card-body">
 
-                <form class="row g-3">
-                    <div class="col-12">
-                        <label for="inputEmail" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="inputEmail">
-                    </div>
+            <form class="row g-3"  method="post">
+                {% csrf_token %}
+                {% for field in form.visible_fields %}
+                <div class="col-12">
+                    <label for="{{field.id_for_label}}">{{field.label}}</label>
+                    {{field|add_class:'form-control'}}
+                </div>
+                <!-- <div class="col-12">
+                    <label for="inputEmail" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="inputEmail">
+                </div>
 
-                    <div class="col-12">
-                        <label for="inputAddress" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputAddress">
-                    </div>
+                <div class="col-md-12">
+                    <label for="inputAddress" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputAddress">
+                </div>
 
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Telefone</label>
-                        <input type="tel" class="form-control" id="inputAddress2">
-                    </div>
+                <div class="col-md-12">
+                    <label for="inputAddress2" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="inputAddress2">
+                </div>
 
-                    <div class="col-12">
-                        <label for="inputCity" class="form-label">Cidade</label>
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
+                <div class="col-md-12">
+                    <label for="inputCity" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
 
-                    <div class="col-12">
-                        <label for="inputCep" class="form-label">CEP</label>
-                        <input type="number" class="form-control" id="inputCep">
-                    </div>
-
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+                <div class="col-md-12">
+                    <label for="inputCep" class="form-label">CEP</label>
+                    <input type="number" class="form-control" id="inputCep">
+                </div> -->
+                {% endfor %}
+                <div class="pet-form-btn">
+                    <button type="submit" class="btn form-btn-primary">Enviar</button>
+                </div>
         </div>
 
-        </form>
     </div>
+
+    </form>
+
 
 </section>
 

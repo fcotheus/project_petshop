@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
 @font-face {
     font-family: 'Roboto-Regular';
     src: url('../fonts/roboto/Roboto-Regular.eot');
-    src: url('../fonts/roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../fonts/roboto/Roboto-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-    url('../fonts/roboto/Roboto-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/roboto/Roboto-Regular.svg#svgFontName') format('svg');
+    src: url('../fonts/roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/roboto/Roboto-Regular.woff') format('woff'),
+        /* Pretty Modern Browsers */
+        url('../fonts/roboto/Roboto-Regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/roboto/Roboto-Regular.svg#svgFontName') format('svg');
 }
 
 html,
@@ -160,11 +165,7 @@ section {
 
 
 /***************************************************************************************************************/
-
-
 /***************************************************************************************************************/
-
-
 /***************************************************************************************************************/
 
 nav.navbar-transparente {
@@ -184,7 +185,7 @@ nav.navbar-transparente {
 .main-login {
     width: 100%;
     height: 100vh;
-    background: #9588b1;
+    background: #201b2c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,8 +352,8 @@ nav.navbar-transparente {
     flex-direction: column;
 }
 
-#rodape a{
-    color: #333; 
+#rodape a {
+    color: #333;
     text-decoration: none;
 }
 
@@ -621,11 +622,7 @@ nav.navbar-transparente {
 
 
 /*************************************************************************************/
-
-
 /*************************************FORM********************************************/
-
-
 /*************************************************************************************/
 
 .pet-form-container {
@@ -640,9 +637,34 @@ nav.navbar-transparente {
     transition: min-height 180ms ease;
     word-break: break-word;
     margin-top: 8em;
-    margin-bottom: 4.5em;
+    margin-bottom: 2.5em;
     box-shadow: 0em 0.1em 1em 0.2em rgba(8, 8, 8, 0.3);
     border-radius: 0.4em;
+}
+
+.pet-form-titulo{
+    justify-content: center;
+    align-items: center;
+    color: #39abb6;
+    display: flex; 
+    text-transform: uppercase; 
+    flex-direction: column;
+}
+.pet-form-titulo h2{
+    margin-bottom: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.3em;
+    font-size: 2em;
+    font-weight: bold;
+
+
+}
+.pet-form-titulo h5{
+  margin-bottom: 0;
+  padding: 0.4em 0;
+  font-size: 1.3em;
+  font-weight: 400;
+
 }
 
 .pet-form-container label {
@@ -681,7 +703,7 @@ nav.navbar-transparente {
 /*****************************************************************************/
 /***********************************FRASE*************************************/
 /*****************************************************************************/
-#frases{
+#frases {
     background: #45bae8;
     margin: 2em 0;
     padding: 1em 0;
@@ -692,26 +714,76 @@ nav.navbar-transparente {
     text-align: center;
 }
 
-#frases .titulo_frase{
+#frases .titulo_frase {
     display: flex;
     align-items: center;
 }
 
-/* .card_pet{
-  border:1px solid #e7ecf1;
+.card_pet{
+  /* border:1px solid #e7ecf1; */
   padding: 2%;
   margin-top: 5em;
   
   }
+  .sub_card_pet{
+    box-shadow: 0em 0.1em 1em 0.2em rgba(8, 8, 8, 0.3);
+    border-radius: 0.4em;
+  }
   .card__titulo{
-      color: #32c5d2;
+
+      align-items: center;
+      color: #39abb6;
       display: flex; 
       text-transform: uppercase; 
   }
   .card__titulo h2{
       margin-bottom: 0;
-      padding: 0.2em 0;
+      padding: 1em 0;
       font-size: 1.6em;
-      font-weight: 400;
+      font-weight: bold;
       align-items: center;
-  } */
+  }
+  .card__titulo h5{
+    margin-bottom: 0;
+    padding: 0.4em 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    align-items: center;
+}
+
+.card_Pet_btn{
+    display: flex;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+.card-btn-primary {
+    position: relative;
+    display: inline-block;
+    padding: 0.35em 0.6em !important;
+    margin: 0;
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: -1px -1px 1px rgb(0 0 0 / 9%);
+    outline: 0;
+    cursor: pointer;
+    background-color: rgba(0, 174, 239, 1) !important;
+    color: #fff !important;
+    transition: all .2s ease;
+    font-size: 1.3em !important;
+}
+
+
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}

@@ -1,6 +1,104 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load widget_tweaks %}
 
+<section #cliente class="card_pet container">
+    <div class="card sub_card_pet">
+        <div class="card-header card__titulo">
+            <h5>Cadastro de Cliente</h5>
+        </div>
+        <div class="card-body">
+            <!-- <h5 class="card-title">Cadastro de Pet</h5> -->
+            <form action="" class="row g-3" method="post">
+                {% csrf_token %}
+                {% for field in cliente_form.visible_fields %}
+
+                <div class="col-md-3">
+                    <label for="{{field.id_for_label}}">{{field.label}}</label>
+                    {{field|add_class:'form-control'}}
+                </div>
+                <!-- <div class="col-md-6">
+                    <label for="inputNome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="inputNome">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inputEspecie" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="inputEspecie">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inputRaça" class="form-label">RG</label>
+                    <input type="text" class="form-control" id="inputRaça">
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="inputNacimento" class="form-label">Data de Nascimento</label>
+                    <input type="date" class="form-control" name="" id="">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="inputIdade" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputIdade" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputIdade">
+                </div>
+
+                <div class="col-md-2">
+                    <label for="inputIdade" class="form-label">CEP</label>
+                    <input type="number" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-5">
+                    <label for="inputIdade" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-2">
+                    <label for="inputIdade" class="form-label">Número</label>
+                    <input type="number" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputIdade" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-5">
+                    <label for="inputIdade" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-2">
+                    <label for="inputIdade" class="form-label">UF</label>
+                    <input type="text" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputIdade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="inputIdade">
+                </div>
+                <div class="col-md-2">
+                    <label for="inputPorte" class="form-label">Tipo</label>
+                    <select name="form-control" class="form-select" id="inputPorte">
+                        <option value="Mi">Clientes</option>
+                        <option value="P">Inativo</option>
+                        <option value="M">Prospecção</option>
+
+                    </select>
+                </div> -->
+                {% endfor %}
+                <div class="col-md-12 d-flex justify-content-between align-items-center mt-5">
+                    <!-- <div>
+                        <label class="form-label" for="date_cadastro">Data de Cadastro:</label>
+                        <p>28/03/2022</p>
+                    </div> -->
+                    <div class="card_Pet_btn">
+                        <button type="submit" class="btn card-btn-primary"><i class="fa-solid fa-floppy-disk"></i>
+                            Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

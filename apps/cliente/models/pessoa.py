@@ -29,7 +29,7 @@ class Pessoa(models.Model):
         ('SC','SC'),
         ('SP','SP'),
         ('SE','SE'),
-        ('TO','TO')
+        ('TO','TO'),
         )
 
     TIPO_CLIENTE = (
@@ -50,7 +50,7 @@ class Pessoa(models.Model):
     numero = models.IntegerField(blank=True)
     bairro = models.CharField(max_length=50,blank=True)
     complemento = models.CharField(max_length=50,blank=True)
-    uf = models.CharField(max_length=4,choices=UF_CHOICES,blank=True,default=0)
+    uf = models.TextField(choices=UF_CHOICES,max_length=2,default=0)
     cidade = models.CharField(max_length=200,blank=True)
     tipo_cliente = models.TextField(choices=TIPO_CLIENTE,max_length=15,default=0)
-    data_cricao = models.DateField()
+    # data_cricao = models.DateField()

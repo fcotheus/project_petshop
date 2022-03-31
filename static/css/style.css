@@ -710,9 +710,8 @@ nav.navbar-transparente {
 /*****************************************************************************/
 #frases {
     background: #45bae8;
-    margin: 2em 0;
-    padding: 1em 0;
-    border: 1px solid red;
+    margin-bottom: 2em;
+    padding: 1.5em 0;
     display: flex;
     justify-content: center;
     color: #FFF;

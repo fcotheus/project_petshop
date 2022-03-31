@@ -14,21 +14,21 @@
         {% for message in messages %}
         <p style="color: cornflowerblue;">{{ message }}</p>
         {% endfor %}
-        <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
+        <div class="col-xl-6  col-lg-4 col-md-6 col-sm-12">
           <label class="form-label" for="nome_receita">Nome</label>
-          <input type="text" class="form-control" name="nome" required>
+          <input type="text" class="form-control" name="nome" id="first-name" required>
         </div>
-        <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="email">Email</label>
-          <input type="email" class="form-control" name="email" required>
+        <div class="col-xl-6  col-lg-4 col-md-6 col-sm-12">
+          <label class="form-label" for="nome_receita">Usuário</label>
+          <input type="text" class="form-control" name="username" id="username" required>
+        </div>
+        <div class="col-xl-6  col-lg-4 col-md-6 col-sm-12">
+          <label class="form-label" for="email">E-mail</label>
+          <input type="email" class="form-control" name="email" id="email" required>
         </div>
         <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
           <label class="form-label" for="password">Senha</label>
-          <input type="password" class="form-control" name="password" required>
-        </div>
-        <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="password2">Confirmação de senha</label>
-          <input type="password" class="form-control" name="password2" required>
+          <input type="password" class="form-control" name="password" id="password" required>
         </div>
         <div class="card_Pet_btn">
           <a class="btn card-btn-primary" style="margin-top: 36px; margin-left: 0;" href="{% url 'login-usuario' %}" type="submit">Criar sua

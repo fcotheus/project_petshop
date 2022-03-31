@@ -9,10 +9,13 @@
     </div>
     <div class="card-body">
 
-      <form class="row g-3" method="post">
+      <form class="row g-3" action="{% url 'cadastro-usuario' %}" method="post">
         {% csrf_token %}
+        {% for message in messages %}
+        <p style="color: cornflowerblue;">{{ message }}</p>
+        {% endfor %}
         <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="nome_receita">Nome completo</label>
+          <label class="form-label" for="nome_receita">Nome</label>
           <input type="text" class="form-control" name="nome" required>
         </div>
         <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12">
@@ -28,7 +31,8 @@
           <input type="password" class="form-control" name="password2" required>
         </div>
         <div class="card_Pet_btn">
-          <button class="btn card-btn-primary" type="submit">Criar sua conta</button>
+          <a class="btn card-btn-primary" style="margin-top: 36px; margin-left: 0;" href="{% url 'login-usuario' %}" type="submit">Criar sua
+            conta</a>
         </div>
       </form>
     </div>

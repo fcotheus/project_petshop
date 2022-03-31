@@ -176,7 +176,12 @@ nav.navbar-transparente {
     border-radius: 0 0 0.8em 0.8em;
     z-index: 10;
 }
-
+.navbar-transparente img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
 .nav_topo {
     display: flex;
     justify-content: flex-end;

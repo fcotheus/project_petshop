@@ -689,6 +689,7 @@ nav.navbar-transparente {
     display: flex;
     justify-content: center;
     color: #FFF;
+    text-align: center;
 }
 
 #frases .titulo_frase{

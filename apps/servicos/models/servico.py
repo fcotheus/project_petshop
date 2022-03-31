@@ -11,7 +11,8 @@ class Servico(models.Model):
         ('DINHEIRO','Dinheiro'),
         ('DEBITO','Cartão de débito'),
         ('CREDITO','Cartão de crédito'),
-        ('BOLETO','Boleto bancário'))
+        ('BOLETO','Boleto bancário'),
+        ('PIX','Pix'))
 
     servico = models.TextField(choices=SERVICO,max_length=15,default=0)
     date_servico = models.DateField(blank=True)

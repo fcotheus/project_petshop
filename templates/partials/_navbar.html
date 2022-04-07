@@ -10,16 +10,16 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse nav_topo" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse nav_topo mr-5" id="navbarNav">
+                <ul class="navbar-nav nav_top_link ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Página Inicial</a>
+                        <a class=" btn btn_consulta " aria-current="page" href="{% url 'index'%}"><i class="fa-solid fa-house icone"></i>Página Inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'lead'%}"><i class="fa-solid fa-comment"></i>Fale Conosco</a>
+                        <a class=" btn btn_consulta" href="{% url 'lead'%}"><i class="fa-solid fa-comment icone"></i>Fale Conosco</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login-usuario' %}"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                        <a class=" btn btn_consulta" href="{% url 'login-usuario' %}"><i class="fa-solid fa-right-to-bracket icone"></i>Login</a>
                     </li>
                 </ul>
             </div>

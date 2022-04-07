@@ -165,7 +165,7 @@ section {
 
 
 /***************************************************************************************************************/
-/***************************************************************************************************************/
+/*************************************************NAVBAR********************************************************/
 /***************************************************************************************************************/
 
 nav.navbar-transparente {
@@ -185,6 +185,40 @@ nav.navbar-transparente {
 .nav_topo {
     display: flex;
     justify-content: flex-end;
+
+}
+.nav_topo .nav_top_link {
+    margin-right: 4em !important;
+}
+.nav_topo .nav_top_link .btn_consulta{
+    width: 9em;
+	text-align: center;
+	margin: 0.2em 0;
+	font-family: 'Roboto-Regular';
+	color: #ffffff !important;
+	min-width: 5em;
+	font-size: 1.1em;
+	padding: 0.4rem  0.5rem;
+    background-color:#45bae8  !important ;
+    margin: 0 0.5em;
+    justify-content: center;
+}
+.nav_topo .nav_top_link a.btn_consulta:hover{
+    background-color:#45bae8  !important ;
+	border-bottom:5px solid #1488b6  !important;
+    color: #fff !important;
+	font-weight: bold;
+    transition: 0.3s;
+}
+.nav_topo .nav_top_link a.btn_consulta:active{
+    background-color:#2ea8d8  !important ;
+	border-bottom:5px solid #032e3f  !important;
+    color: #fff !important;
+	font-weight: bold;
+    transition: 0.3s;
+}
+.nav_topo .nav_top_link a.btn_consulta .icone{
+    margin-right: 0.2em !important;
 }
 
 .main-login {
@@ -254,11 +288,13 @@ nav.navbar-transparente {
     box-shadow: 0px 10px 40px #00000056;
     outline: none;
     box-sizing: border-box;
+    margin-bottom: 12px;
 }
 
 .textfield>label {
     color: #f0ffffde;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+    margin-left: 4px;
 }
 
 .textfield>input::placeholder {
@@ -295,14 +331,8 @@ nav.navbar-transparente {
 
 
 /* Css Tela ade Serviço */
-
-
 /*************************************************************************************/
-
-
 /*************************************************************************************/
-
-
 /*************************************************************************************/
 
 .item {
@@ -330,11 +360,7 @@ nav.navbar-transparente {
 }
 
 /*************************************************************************************/
-
-
 /***********************************Rodape********************************************/
-
-
 /*************************************************************************************/
 
 #rodape {
@@ -369,11 +395,7 @@ nav.navbar-transparente {
 
 
 /********************************************************************************************************/
-
-
 /**********************************************SIDEBAR***************************************************/
-
-
 /********************************************************************************************************/
 
 .sidebar {

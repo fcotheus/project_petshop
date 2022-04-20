@@ -2,41 +2,44 @@
 {% load static %}
 {% block content %}
 
-<section #usuario class="pet-form-container ">
-  <div class="sub_card_pet card">
-    <div class="card-header card__titulo">
-      <h5>Cadastro de Usuário</h5>
-    </div>
-    <div class="card-body">
+<section #usuario class="pet-login-container">
 
-      <form class="row g-3" action="{% url 'cadastro-usuario' %}" method="post">
-        {% csrf_token %}
-        {% for message in messages %}
-        <p style="color: cornflowerblue;">{{ message }}</p>
-        {% endfor %}
-        <div class="col-xl-6  col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="nome_receita">Nome</label>
-          <input type="text" class="form-control" name="nome" id="first-name" required>
-        </div>
-        <div class="col-xl-6  col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="nome_receita">Usuário</label>
-          <input type="text" class="form-control" name="username" id="username" required>
-        </div>
-        <div class="col-xl-6  col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="email">E-mail</label>
-          <input type="email" class="form-control" name="email" id="email" required>
-        </div>
-        <div class="col-xl-6 col-lg-4 col-md-6 col-sm-12">
-          <label class="form-label" for="password">Senha</label>
-          <input type="password" class="form-control" name="password" id="password" required>
-        </div>
-        <div class="card_Pet_btn">
-          <a class="btn card-btn-primary" style="margin-top: 36px; margin-left: 0;" href="{% url 'login-usuario' %}" type="submit">Criar sua
-            conta</a>
-        </div>
-      </form>
-    </div>
 
+  <div class="card-login">
+    <h1 style="margin-bottom: 18px;">Cadastro de Usuário</h1>
+
+    <form action="{% url 'cadastro-usuario' %}" method="POST" style="width: 100%;">
+      {% csrf_token %}
+
+      {% for message in messages %}
+      <p style="color: cornflowerblue;">{{ message }}</p>
+      {% endfor %}
+
+      <div class="textfield col-sm-12">
+        <label class="form-label" for="first-name">Nome</label>
+        <input type="text" class="form-control" name="nome" id="first-name" required>
+      </div>
+
+      <div class="textfield col-sm-12" style="margin-top: 10px;">
+        <label class="form-label" for="username">Usuário</label>
+        <input type="text" class="form-control" name="username" id="username" required>
+      </div>
+
+      <div class="textfield col-sm-12" style="margin-top: 10px;">
+        <label class="form-label" for="email">E-mail</label>
+        <input type="email" class="form-control" name="email" id="email" required>
+      </div>
+
+      <div class="textfield col-sm-12" style="margin-top: 10px;">
+        <label class="form-label" for="password">Senha</label>
+        <input type="password" class="form-control" name="password" id="password" required>
+      </div>
+
+      <button class="btn-login" style="margin-top: 36px; margin-left: 0;">Criar sua conta</button>
+      <p style="color: white; text-align: center;">Já possui uma conta? <a href="{% url 'login-usuario' %}"
+          style="color: cornflowerblue; text-decoration: none;">Entre aqui</a></p>
+    </form>
+  </div>
   </div>
 
 </section>

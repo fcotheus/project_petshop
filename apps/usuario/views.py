@@ -13,7 +13,7 @@ def login_usuario(request):
 
         if user != None:
             login(request, user)
-            return redirect('/')
+            return redirect('/usuario/dashboard')
 
         messages.error(request, 'Usuário ou senha inválidos!')
 
@@ -24,6 +24,10 @@ def logout_usuario(request):
     logout(request)
     return redirect('/')
 
+
+
+
+
 def cadastro_usuario(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -31,6 +35,12 @@ def cadastro_usuario(request):
         email = request.POST['email']
         password = request.POST['password']
 
+        if campo_vazio(username):
+            messages.error(request,'O campo Usuario não pode ficar em branco')
+            return redirect('/usuario/cadastro')
+        if campo_vazio(email):
+            messages.error(request,'O campo email não pode ficar em branco')
+            return redirect('cadastro')
         if User.objects.filter(email=email).count() > 0:
             messages.error(request, 'Este e-mail já foi cadastrado!')
             return redirect('/usuario/cadastro')
@@ -47,5 +57,17 @@ def cadastro_usuario(request):
             messages.error(request, 'Ocorreu algum erro ao cadastrar!')
 
         return redirect('/usuario/login')
-    
-    return render(request, 'usuario/cadastro_usuario.html')
+    else:
+        return render(request, 'usuario/cadastro_usuario.html')
+
+
+
+        
+def dashboard(request):
+    if request.user.is_authenticated:
+        return render(request, 'usuario/dashboard.html')
+    else:
+        return redirect('/')
+
+def campo_vazio(campo):
+    return not campo.strip()

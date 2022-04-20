@@ -43,7 +43,7 @@
             <div class="profile_details">
                 <img src="{%static 'img/logo.svg' %}" alt="">
                 <div class="name_job">
-                    <div class="name">Merfiu</div>
+                    <div class="name">{{ user.username }}</div>
                     <div class="job">web System</div>
                 </div>
             </div>
@@ -55,6 +55,6 @@
 </section>
 
    <div class="home_content">
-    {% block content %} {% endblock %}
+    {% block dash %} {% endblock %}
     </div>
 

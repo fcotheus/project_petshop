@@ -48,6 +48,7 @@ def editar_servico(request, id):
 		try:
 			Servico.objects.filter(id=id).update(client=client, animal=animal, type=type, payment=payment)
 			messages.success(request, 'Dados editados com sucesso!')
+			return redirect('/servicos/listar')
 		except Exception:
 			messages.error(request, 'Ocorreu algum erro ao editar os dados!')
 

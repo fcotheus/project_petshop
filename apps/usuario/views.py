@@ -40,7 +40,7 @@ def cadastro_usuario(request):
             return redirect('/usuario/cadastro')
         if campo_vazio(email):
             messages.error(request,'O campo email não pode ficar em branco')
-            return redirect('cadastro')
+            return redirect('/usuario/cadastro')
         if User.objects.filter(email=email).count() > 0:
             messages.error(request, 'Este e-mail já foi cadastrado!')
             return redirect('/usuario/cadastro')

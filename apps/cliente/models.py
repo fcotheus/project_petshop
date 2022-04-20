@@ -51,7 +51,7 @@ class Pessoa(models.Model):
     bairro = models.CharField(max_length=50,blank=True, default='')
     complemento = models.CharField(max_length=50,blank=True, default='')
     uf = models.TextField(choices=UF_CHOICES,max_length=2, default=0)
-    city = models.CharField(max_length=200,blank=True)
+    city = models.CharField(max_length=200,blank=True,default='')
     tipo_cliente = models.TextField(choices=TIPO_CLIENTE,max_length=15, default=0)
     data_cricao = models.DateField()
 

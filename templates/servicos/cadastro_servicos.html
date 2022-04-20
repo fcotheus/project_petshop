@@ -1,8 +1,65 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section #servico class="container servico_form">
-    <div class="tela">
+<section #servico class="card_pet container">
+    <div class="card sub_card_pet">
+        <div class="card-header card__titulo">
+            <h5>Cadastro de Cliente</h5>
+        </div>
+        <div class="card-body">
+            <form action="{% url 'cadastro-servicos' %}" method="POST" class="row g-3" >
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                            <p style="color: red; margin-bottom: 0; margin-left: 8px;">
+                                {{ message }}
+                            </p>
+                            {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                            <p style="color: green; margin-bottom: 0; margin-left: 8px;">
+                                {{ message }}
+                            </p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <div class="col-md-6">
+                    <label for="client" class="form-label">Cliente</label>
+                    <input type="text" class="form-control"  id="client" name="client" minlength="3" maxlength="50" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="animal" class="form-label">Animal</label>
+                    <input type="text" class="form-control"  id="animal" name="animal" minlength="3" maxlength="50"
+                    title="Informe um nome válido." required>
+                </div>
+                <div class="col-md-6">
+                    <label for="type" class="form-label">Tipo de serviço</label>
+                    <select class="form-select" name="type" required>
+                        <option value="banho">Banho</option>
+                        <option value="tosa">Tosa</option>
+                        <option value="vacina">Vacina</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="payment" class="form-label">Forma de pagamento</label>
+                    <select class="form-select" name="payment" required>
+                        <option value="money">Dinheiro</option>
+                        <option value="card">Cartão de crédito</option>
+                        <option value="bank-transfer">Transferência bancária</option>
+                        <option value="pix">Pix</option>
+                    </select>
+                </div>
+
+                <div class="card_Pet_btn">
+                    <button type="submit" class="btn card-btn-primary"><i class="fa-solid fa-floppy-disk"></i>
+                        Cadastrar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- <div class="tela">
         <form action="{% url 'cadastro-servicos' %}" method="POST">
             {% csrf_token %}
             <table id="tab" cellspacing="2" cellpadding="2">
@@ -60,6 +117,6 @@
             
             </table>	
         </form>
-    </div>
+    </div> -->
 </section>
 {% endblock %}

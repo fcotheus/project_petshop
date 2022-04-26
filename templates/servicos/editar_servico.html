@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'usuario/dashboard.html' %}
 {% load static %}
-{% block content %}
+{% block dash %}
 <section #servico class="container servico_form">
     <div class="tela">
         <form action="{% url 'editar-servico' servico.id %}" method="POST">

@@ -1,6 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<section class="sidebar">
+{% block content %}
+<section #dashboard class="sidebar">
     <div class="logo_content">
         <div class="logo">
             <i class="icon_logo fa-brands fa-centercode"></i>
@@ -10,32 +11,32 @@
     </div>
     <ul class="nav_list">
         <li>
-            <a href="{% url 'servicos/cadastro' %}">
+            <a href="cadastro_servico">
                 <i class="icon_logo fa-solid fa-gauge"></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">Serviços</span>
             </a>
-            <span class="tooltip_menu">Dashboard</span>
+            <span class="tooltip_menu">Serviços</span>
         </li>
         <li>
-            <a href="{% url 'cliente/cadastro' %}">
+            <a href="cadastro_cliente">
                 <i class="icon_logo fa-solid fa-people-group"></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">Clientes</span>
             </a>
-            <span class="tooltip_menu">Dashboard</span>
+            <span class="tooltip_menu">Clientes</span>
         </li>
         <li>
-            <a href="{% url 'pet/cadastro' %}">
+            <a href="cadastro_pet">
                 <i class="icon_logo fa-solid fa-paw"></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">PET</span>
             </a>
-            <span class="tooltip_menu">Dashboard</span>
+            <span class="tooltip_menu">PET</span>
         </li>
         <li>
-            <a href="{% url 'usuario/cadastro' %}">
+            <a href="cadastro_usuario">
                 <i class="icon_logo fa-solid fa-user"></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">Usuário</span>
             </a>
-            <span class="tooltip_menu">Dashboard</span>
+            <span class="tooltip_menu">Usuário</span>
         </li>  
     </ul>
     <div class="profile_content">
@@ -57,4 +58,4 @@
    <div class="home_content">
     {% block dash %} {% endblock %}
     </div>
-
+{% endblock %}

@@ -1,3 +1,4 @@
+from re import match
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -63,9 +64,17 @@ def cadastro_usuario(request):
 
 
         
-def dashboard(request):
+def dashboard(request,rota = ''):
     if request.user.is_authenticated:
-        return render(request, 'usuario/dashboard.html')
+        print(rota)
+        if rota == 'cadastro_servico':
+            return render(request,'servicos/cadastro_servicos.html')
+        elif rota == 'cadastro_cliente':
+            return render(request, 'cliente/cadastro_pessoa.html' )
+        elif rota == 'cadastro_pet':   
+            return render(request, 'pet/cadastro_pet.html')
+        else:    
+            return render(request, 'usuario/dashboard.html')
     else:
         return redirect('/')
 

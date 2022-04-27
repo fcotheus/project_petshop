@@ -10,15 +10,10 @@
         </div>
         <div class="card-body">
             <!-- <h5 class="card-title">Cadastro de Pet</h5> -->
-            <form action="" class="row g-3" method="post">
+            <form action="{% url 'cadastro-pet' %}" class="row g-3" method="post">
                 {% csrf_token %}
-                {% for field in pet_form.visible_fields %}
+
                 <div class="col-md-3">
-                    <label for="{{field.id_for_label}}">{{field.label}}</label>
-                    {{field|add_class:'form-control'}}
-                </div>
-                {% endfor %}
-                <!-- <div class="col-md-3">
                     <label for="inputNome" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="inputNome">
                 </div>
@@ -74,16 +69,15 @@
                 <div class="col-md-3">
                     <label for="inputIdade" class="form-label">Idade</label>
                     <input type="number" class="form-control" id="inputIdade">
-                </div> -->
+                </div>
 
                 <div class="col-md-12 d-flex justify-content-between align-items-center mt-5">
-                    <div class="card_Pet_btn">
-                     <!-- <div>
+                    <div>
                         <label class="form-label" for="date_cadastro">Data de Cadastro:</label>
                         <p>28/03/2022</p>
-                    </div> -->
-                    
-                    <div>
+                    </div>
+
+                    <div class="card_Pet_btn">
                         <button type="submit" class="btn card-btn-primary"><i class="fa-solid fa-floppy-disk"></i>
                             Cadastrar</button>
                     </div>

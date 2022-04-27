@@ -42,14 +42,14 @@
     <div class="profile_content">
         <div class="profile">
             <div class="profile_details">
-                <img src="{%static 'img/logo.svg' %}" alt="">
+                <img src="{%static 'img/pet.png' %}" alt="">
                 <div class="name_job">
                     <div class="name">{{ user.username }}</div>
                     <div class="job">web System</div>
                 </div>
             </div>
             <div class="item_log_out">
-                <i class="fa-solid fa-right-from-bracket" id="log_out"></i>
+                <a style="color: #FFF;" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket" id="log_out"></i></a>
             </div>
         </div>
     </div>

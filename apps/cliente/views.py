@@ -1,12 +1,25 @@
-from ast import Try
+from pydoc import cli
 from django.shortcuts import render, redirect
-from apps.usuario.views import cadastro_usuario
-from cliente.models  import Pessoa
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from cliente.models import Pessoa
 from tempus_dominus.widgets import DatePicker
 from datetime import datetime
 
-def cadastro(request):
+
+@login_required(login_url='/usuario/login')
+def listar_clientes(request):
+    clientes = Pessoa.objects.all()
+
+    context = {
+        'cliente': clientes
+    }
+
+    return render(request, 'cliente/listar_pessoa.html', context)
+
+
+@login_required(login_url='/usuario/login')
+def cadastro_cliente(request):
     if request.method == 'POST':
         name = request.POST['name']
         cpf = request.POST['cpf']
@@ -20,8 +33,8 @@ def cadastro(request):
         bairro = request.POST['bairro']
         complemento = request.POST['complemento']
         uf = request.POST['uf']
+        city = request.POST['city']
         tipo_cliente = request.POST['tipo_cliente']
-        data_cricao = request.POST['data_cricao']
 
         try:
             cadastro_cliente = Pessoa()
@@ -38,14 +51,55 @@ def cadastro(request):
             cadastro_cliente.complemento = complemento
             cadastro_cliente.uf = uf
             cadastro_cliente.tipo_cliente = tipo_cliente
-            cadastro_cliente.data_cricao =  datetime.now()
-            print(cadastro_cliente.data_cricao)
+            cadastro_cliente.data_cricao = datetime.now().strftime("%d/%m/%Y")
+            now = datetime.now()
+            year = now.strftime("Y%")
+            print('data',year)
             cadastro_cliente.save()
-            return redirect('dashboard')
+            # return redirect('dashboard')
         except Exception as error:
-            print(error) 
-            messages.error(request, 'Ocorreu algum erro enviar o formulário!')   
-    return render(request, 'cliente/cadastro_pessoa.html' )
+            print(error)
+            messages.error(request, 'Ocorreu algum erro enviar o formulário!')
+    return render(request, 'cliente/cadastro_pessoa.html')
+
+
+@login_required(login_url='/usuario/login')
+def editar_cliente(request, id):
+    if request.method == 'POST':
+        name = request.POST['name']
+        cpf = request.POST['cpf']
+        rg = request.POST['rg']
+        data_nasc = request.POST['data_nasc']
+        telephone = request.POST['telephone']
+        email = request.POST['email']
+        cep = request.POST['cep']
+        logadouro = request.POST['logadouro']
+        numero = request.POST['numero']
+        bairro = request.POST['bairro']
+        complemento = request.POST['complemento']
+        uf = request.POST['uf']
+        tipo_cliente = request.POST['tipo_cliente']
+
+        try:
+            Pessoa.objects.filter(id=id).update(name=name, cpf=cpf, rg=rg, data_nasc=data_nasc, telephone=telephone, email=email,
+                                  cep=cep, logadouro=logadouro, numero=numero, bairro=bairro, complemento=complemento, uf=uf, tipo_cliente=tipo_cliente)
+            messages.success(request, 'Dados editados com sucesso!')
+            return redirect('/cientes/listar')
+        except Exception:
+            messages.error(request, 'Ocorreu algum erro ao editar os dados!')
+
+        return redirect('/cientes/listar')
+
+
+@login_required(login_url='/usuario/login')
+def apagar_cliente(request, id):
+    try:   
+        Pessoa.objects.filter(id=id).delete()
+        messages.success(request, 'Dados apagados com sucesso!')
+    except Exception:
+        messages.error(request, 'Ocorreu algum erro ao apagar os dados!')
+
+    return redirect('/cientes/listar')	
 
 def Lead(request):
     if request.method == 'POST':

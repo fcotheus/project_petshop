@@ -9,7 +9,7 @@
             <h5>Cadastro de Cliente</h5>
         </div>
         <div class="card-body">
-            <form action="{% url 'cadastro' %}"class="row g-3" method="post">
+            <form action="{% url 'cadastro-cliente' %}"class="row g-3" method="post">
                 {% csrf_token %}
 
                 {% if messages %}
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <label for="inputIdade" class="form-label">CEP</label>
+                    <label for="cep" class="form-label">CEP</label>
                     <input type="number" class="form-control" id="cep" name="cep" minlength="8" maxlength="8"
                     pattern="^[0-9]{8}$" title="Informe um cep válido." required>
                 </div>
@@ -82,7 +82,35 @@
                 </div>
                 <div class="col-md-2">
                     <label for="uf" class="form-label">UF</label>
-                    <input type="text" class="form-control" id="uf">
+                    <select name="form-control" class="form-select" id="uf">
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
                 </div>
                 <div class="col-md-3">
                     <label for="city" class="form-label">Cidade</label>
@@ -92,9 +120,9 @@
                 <div class="col-md-2">
                     <label for="tipo_cliente" class="form-label">Tipo</label>
                     <select name="form-control" class="form-select" id="tipo_cliente">
-                        <option value="Mi">Clientes</option>
-                        <option value="P">Inativo</option>
-                        <option value="M">Prospecção</option>
+                        <option value="ATIVO">Clientes</option>
+                        <option value="INATIVO">Inativo</option>
+                        <option value="PROSPECCAO">Prospecção</option>
 
                     </select>
                 </div>
@@ -102,7 +130,7 @@
                     <div>
                         <label class="form-label" for="date_cadastro">Data de Cadastro:</label>
                         
-                        <p>07/04/2022</p>
+                        <p>{{cadastro_cliente.data_cricao}}</p>
                        
                     </div>
                     <div class="card_Pet_btn">

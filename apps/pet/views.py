@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from pet.forms import PetForms
 
-def cadastro(request):
-   pet_form = PetForms()
-   contexto = {'pet_form':pet_form}
-   return render(request, 'pet/cadastro_pet.html',contexto)
+def listar_pets(request):
+   pass
+def cadastro_pet(request):
+   pass
+def editar_pet(request):
+   pass
+def apagar_pet(request):
+   pass

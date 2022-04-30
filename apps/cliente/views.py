@@ -50,6 +50,7 @@ def cadastro_cliente(request):
             cadastro_cliente.bairro = bairro
             cadastro_cliente.complemento = complemento
             cadastro_cliente.uf = uf
+            cadastro_cliente.city=city
             cadastro_cliente.tipo_cliente = tipo_cliente
             cadastro_cliente.data_cricao = datetime.now().strftime("%d/%m/%Y")
             now = datetime.now()

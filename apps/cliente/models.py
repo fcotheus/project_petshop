@@ -1,5 +1,4 @@
 from django.db import models
-from statistics import mode
 
 class Pessoa(models.Model):
     UF_CHOICES = (
@@ -40,9 +39,9 @@ class Pessoa(models.Model):
 
 
     name = models.CharField(max_length=100, default='')
-    cpf = models.CharField(max_length=20, blank=True)
+    cpf = models.CharField(max_length=20, blank=True, default='')
     rg = models.CharField(max_length=20, blank=True, default='')
-    data_nasc = models.DateField(blank=True)
+    data_nasc = models.DateField(blank=True, default='')
     telephone = models.CharField(max_length=20, default='')
     email = models.EmailField()
     cep= models.CharField(max_length=15,blank=True, default='')

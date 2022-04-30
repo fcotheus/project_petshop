@@ -9,7 +9,7 @@
             <h5>Cadastro de Cliente</h5>
         </div>
         <div class="card-body">
-            <form action="{% url 'cadastro-cliente' %}"class="row g-3" method="post">
+            <form action="{% url 'cadastro-cliente' %}"class="row g-3" method="POST">
                 {% csrf_token %}
 
                 {% if messages %}
@@ -40,7 +40,7 @@
 
                 <div class="col-md-3">
                     <label for="rg" class="form-label">RG</label>
-                    <input type="text" class="form-control" id="rg">
+                    <input type="text" class="form-control" id="rg" name="rg">
                 </div>
 
 
@@ -66,23 +66,23 @@
                 </div>
                 <div class="col-md-5">
                     <label for="logadouro" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="logadouro">
+                    <input type="text" class="form-control" id="logadouro" name="logadouro">
                 </div>
                 <div class="col-md-2">
                     <label for="numero" class="form-label">Número</label>
-                    <input type="number" class="form-control" id="numero">
+                    <input type="number" class="form-control" id="numero" name="numero">
                 </div>
                 <div class="col-md-3">
                     <label for="bairro" class="form-label">Bairro</label>
-                    <input type="text" class="form-control" id="bairro">
+                    <input type="text" class="form-control" id="bairro" name="bairro">
                 </div>
                 <div class="col-md-5">
                     <label for="complemento" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" id="complemento">
+                    <input type="text" class="form-control" id="complemento" name="complemento">
                 </div>
                 <div class="col-md-2">
                     <label for="uf" class="form-label">UF</label>
-                    <select name="form-control" class="form-select" id="uf">
+                    <select name="uf" class="form-select" id="uf">
                         <option value="AC">AC</option>
                         <option value="AL">AL</option>
                         <option value="AP">AP</option>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="col-md-2">
                     <label for="tipo_cliente" class="form-label">Tipo</label>
-                    <select name="form-control" class="form-select" id="tipo_cliente">
+                    <select name="tipo_cliente" class="form-select" id="tipo_cliente">
                         <option value="ATIVO">Clientes</option>
                         <option value="INATIVO">Inativo</option>
                         <option value="PROSPECCAO">Prospecção</option>

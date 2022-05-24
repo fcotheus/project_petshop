@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Abenda';
+    src: url('Abenda.eot');
+    src: url('Abenda.eot?#iefix') format('embedded-opentype'),
+        url('Abenda.woff2') format('woff2'),
+        url('Abenda.woff') format('woff'),
+        url('Abenda.ttf') format('truetype'),
+        url('Abenda.svg#Abenda') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

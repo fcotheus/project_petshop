@@ -1,0 +1,146 @@
+{% extends 'usuario/dashboard.html' %}
+{% load static %}
+{% block dash %}
+{% load widget_tweaks %}
+
+<section #cliente class="card_pet container">
+    <div class="card sub_card_pet">
+        <div class="card-header card__titulo">
+            <h5>Cadastro de Cliente</h5>
+        </div>
+        <div class="card-body">
+            <form action="{% url 'cadastro-cliente' %}"class="row g-3" method="POST">
+                {% csrf_token %}
+
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                            <p style="color: red; margin-bottom: 0; margin-left: 8px;">
+                                {{ message }}
+                            </p>
+                            {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                            <p style="color: green; margin-bottom: 0; margin-left: 8px;">
+                                {{ message }}
+                            </p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control"  id="name" name="name" minlength="3" maxlength="50"
+                    title="Informe um nome válido." required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" minlength="9" maxlength="15"
+                    title="Informe um CPF válido." required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="rg" class="form-label">RG</label>
+                    <input type="text" class="form-control" id="rg" name="rg">
+                </div>
+
+
+                <div class="col-md-3">
+                    <label for="data_nasc" class="form-label">Data de Nascimento</label>
+                    <input type="date" class="form-control" name="data_nasc" id="data_nasc">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="telephone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" minlength="11" maxlength="15"
+                    title="Informe um telefone válido." required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" maxlength="255" required>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="number" class="form-control" id="cep" name="cep" minlength="8" maxlength="8"
+                    pattern="^[0-9]{8}$" title="Informe um cep válido." required>
+                </div>
+                <div class="col-md-5">
+                    <label for="logadouro" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="logadouro" name="logadouro">
+                </div>
+                <div class="col-md-2">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="number" class="form-control" id="numero" name="numero">
+                </div>
+                <div class="col-md-3">
+                    <label for="bairro" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro">
+                </div>
+                <div class="col-md-5">
+                    <label for="complemento" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" name="complemento">
+                </div>
+                <div class="col-md-2">
+                    <label for="uf" class="form-label">UF</label>
+                    <select name="uf" class="form-select" id="uf">
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="city" name="city" minlength="3" maxlength="50"
+                    title="Informe uma cidade válida." required>
+                </div>
+                <div class="col-md-2">
+                    <label for="tipo_cliente" class="form-label">Tipo</label>
+                    <select name="tipo_cliente" class="form-select" id="tipo_cliente">
+                        <option value="ATIVO">Clientes</option>
+                        <option value="INATIVO">Inativo</option>
+                        <option value="PROSPECCAO">Prospecção</option>
+
+                    </select>
+                </div>
+                <div class="col-md-12 d-flex justify-content-between align-items-center mt-5">
+                    <div>
+                        <label class="form-label" for="date_cadastro">Data de Cadastro:</label>
+                        
+                        <p>{{cadastro_cliente.data_cricao}}</p>
+                       
+                    </div>
+                    <div class="card_Pet_btn">
+                        <button type="submit" class="btn card-btn-primary"><i class="fa-solid fa-floppy-disk"></i>
+                            Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

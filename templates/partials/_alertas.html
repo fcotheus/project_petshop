@@ -1,0 +1,17 @@
+{% load static %}
+
+{% if messages%}
+
+{% for message in messages %}
+<div class="overlay-container">
+    <div id="toast-container" class="toast-top-center toast-container">
+        <div toast-component="" class="toast-{{message.tags}} py-toastr ng-trigger ng-trigger-flyInOut" style="opacity: 1;">
+            <div aria-live="polite" role="alertdialog" class="toast-message ng-star-inserted"
+                aria-label="{{message}}">{{message}}</div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{%endif%}

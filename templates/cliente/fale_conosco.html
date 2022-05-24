@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load widget_tweaks %}
+{% include 'partials/_navbar.html' %}
+
+<section #formClientes class="pet-form-container">
+    <div class="card">
+        <div class="card-header pet-form-titulo text-center">
+            <h2>Fale conosco</h2>
+            <h5>Realize o pré-cadastro e logo entraremos em contato com você.</h5>
+        </div>
+        <div class="card-body">
+
+            <form class="row g-3" action="{% url 'lead' %}" method="post">
+                {% csrf_token %}
+
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                            <p style="color: red; margin-bottom: 0; margin-left: 8px;">
+                                {{ message }}
+                            </p>
+                            {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                            <p style="color: green; margin-bottom: 0; margin-left: 8px;">
+                                {{ message }}
+                            </p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <div class="col-12">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" minlength="3" maxlength="50"
+                        title="Informe um nome válido." required>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" maxlength="255" required>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="telephone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" minlength="11" maxlength="15"
+                        title="Informe um telefone válido." required>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="city" name="city" minlength="3" maxlength="50"
+                        title="Informe uma cidade válida." required>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="number" class="form-control" id="cep" name="cep" minlength="8" maxlength="8"
+                        pattern="^[0-9]{8}$" title="Informe um cep válido." required>
+                </div>
+
+                <div class="pet-form-btn">
+                    <button type="submit" class="btn form-btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% include 'partials/_footer.html' %}
+{% endblock %}

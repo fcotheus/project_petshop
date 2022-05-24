@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section #dashboard class="sidebar">
+    <div class="logo_content">
+        <div class="logo">
+            <i class="icon_logo fa-brands fa-centercode"></i>
+            <div class="logo_name">MerfiuLab</div>
+        </div>
+        <i class="fa-solid fa-bars" id="menu_btn"></i>
+    </div>
+    <ul class="nav_list">
+        <li>
+            <a href="cadastro_servico">
+                <i class="icon_logo fa-solid fa-gauge"></i>
+                <span class="links_name">Serviços</span>
+            </a>
+            <span class="tooltip_menu">Serviços</span>
+        </li>
+        <li>
+            <a href="cadastro_cliente">
+                <i class="icon_logo fa-solid fa-people-group"></i>
+                <span class="links_name">Clientes</span>
+            </a>
+            <span class="tooltip_menu">Clientes</span>
+        </li>
+        <li>
+            <a href="cadastro_pet">
+                <i class="icon_logo fa-solid fa-paw"></i>
+                <span class="links_name">PET</span>
+            </a>
+            <span class="tooltip_menu">PET</span>
+        </li>
+        <li>
+            <a href="cadastro_usuario">
+                <i class="icon_logo fa-solid fa-user"></i>
+                <span class="links_name">Usuário</span>
+            </a>
+            <span class="tooltip_menu">Usuário</span>
+        </li>  
+    </ul>
+    <div class="profile_content">
+        <div class="profile">
+            <div class="profile_details">
+                <img src="{%static 'img/pet.png' %}" alt="">
+                <div class="name_job">
+                    <div class="name">{{ user.username }}</div>
+                    <div class="job">web System</div>
+                </div>
+            </div>
+            <div class="item_log_out">
+                <a style="color: #FFF;" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket" id="log_out"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <div class="home_content">
+    {% block dash %} {% endblock %}
+    </div>
+{% endblock %}

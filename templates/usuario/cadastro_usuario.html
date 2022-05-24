@@ -1,0 +1,47 @@
+{% extends 'usuario/dashboard.html' %}
+{% load static %}
+{% block dash %}
+
+<section #usuario class="pet-login-container">
+
+
+  <div class="card-login">
+    <h1 style="margin-bottom: 18px;">Cadastro de Usuário</h1>
+
+    <form action="{% url 'cadastro-usuario' %}" method="POST" style="width: 100%;">
+      {% csrf_token %}
+
+      {% for message in messages %}
+      <p style="color: cornflowerblue;">{{ message }}</p>
+      {% endfor %}
+
+      <div class="textfield col-sm-12">
+        <label class="form-label" for="name">Nome</label>
+        <input type="text" class="form-control" name="name" id="name" required>
+      </div>
+
+      <div class="textfield col-sm-12" style="margin-top: 10px;">
+        <label class="form-label" for="username">Usuário</label>
+        <input type="text" class="form-control" name="username" id="username" required>
+      </div>
+
+      <div class="textfield col-sm-12" style="margin-top: 10px;">
+        <label class="form-label" for="email">E-mail</label>
+        <input type="email" class="form-control" name="email" id="email" required>
+      </div>
+
+      <div class="textfield col-sm-12" style="margin-top: 10px;">
+        <label class="form-label" for="password">Senha</label>
+        <input type="password" class="form-control" name="password" id="password" required>
+      </div>
+
+      <button class="btn-login" style="margin-top: 36px; margin-left: 0;">Criar sua conta</button>
+      <p style="color: white; text-align: center;">Já possui uma conta? <a href="{% url 'login-usuario' %}"
+          style="color: cornflowerblue; text-decoration: none;">Entre aqui</a></p>
+    </form>
+  </div>
+  </div>
+
+</section>
+
+{% endblock %}
